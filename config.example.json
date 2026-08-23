@@ -1,0 +1,15 @@
+{
+    "instagram": {
+        "session_id": "COLA_AQUI_O_SESSIONID_DA_CONTA_DE_SCRAPING",
+        "csrf_token": "COLA_AQUI_O_CSRFTOKEN",
+        "ds_user_id": "COLA_AQUI_O_DS_USER_ID",
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
+        "app_id": "936619743392459",
+        "page_size": 50,
+        "delay_ms_between_pages": 1500
+    },
+    "profiles": [
+        "instagram",
+        "cristiano"
+    ]
+}
