@@ -83,6 +83,17 @@ class TrackerConfig
         return (int) ($this->data['instagram']['delay_ms_between_pages'] ?? 1500);
     }
 
+    /**
+     * Proxy HTTP(S) opcional. Formatos aceites pela cURL:
+     *   "http://user:pass@host:port"
+     *   "socks5://user:pass@host:port"
+     */
+    public function proxy(): ?string
+    {
+        $p = $this->data['instagram']['proxy'] ?? null;
+        return is_string($p) && $p !== '' ? $p : null;
+    }
+
     /** @return string[] */
     public function profiles(): array
     {

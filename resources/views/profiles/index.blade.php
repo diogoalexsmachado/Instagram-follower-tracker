@@ -15,14 +15,14 @@
                class="block bg-white rounded-xl border border-slate-200 hover:border-slate-400 transition p-5">
                 <div class="flex items-center gap-4">
                     @if ($p?->profile_pic_url)
-                        <img src="{{ $p->profile_pic_url }}" alt="" referrerpolicy="no-referrer"
+                        <img src="@igimg($p->profile_pic_url)" alt="" loading="lazy"
                              class="w-14 h-14 rounded-full object-cover bg-slate-100">
                     @else
                         <div class="w-14 h-14 rounded-full bg-slate-200"></div>
                     @endif
                     <div class="min-w-0">
                         <div class="flex items-center gap-1">
-                            <span class="font-semibold truncate">@{{ $row['username'] }}</span>
+                            <span class="font-semibold truncate">{{ '@'.$row['username'] }}</span>
                             @if ($p?->is_verified)
                                 <span class="text-blue-500 text-xs" title="Verified">✓</span>
                             @endif

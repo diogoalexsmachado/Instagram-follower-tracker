@@ -9,12 +9,12 @@
     <div class="mt-4 bg-white rounded-xl border border-slate-200 p-6">
         <div class="flex items-center gap-5">
             @if ($profile->profile_pic_url)
-                <img src="{{ $profile->profile_pic_url }}" alt="" referrerpolicy="no-referrer"
+                <img src="@igimg($profile->profile_pic_url)" alt="" loading="lazy"
                      class="w-20 h-20 rounded-full object-cover bg-slate-100">
             @endif
             <div class="min-w-0">
                 <div class="flex items-center gap-2">
-                    <h1 class="text-2xl font-bold">@{{ $profile->username }}</h1>
+                    <h1 class="text-2xl font-bold">{{ '@'.$profile->username }}</h1>
                     @if ($profile->is_verified)
                         <span class="text-blue-500" title="Verified">✓</span>
                     @endif
@@ -80,14 +80,14 @@
                     @foreach ($recentEvents as $ev)
                         <li class="py-2 flex items-center gap-3">
                             @if ($ev->profile_pic_url)
-                                <img src="{{ $ev->profile_pic_url }}" alt="" referrerpolicy="no-referrer"
+                                <img src="@igimg($ev->profile_pic_url)" alt="" loading="lazy"
                                      class="w-8 h-8 rounded-full object-cover bg-slate-100">
                             @else
                                 <div class="w-8 h-8 rounded-full bg-slate-200"></div>
                             @endif
                             <div class="flex-1 min-w-0">
                                 <a href="https://www.instagram.com/{{ $ev->username }}/" target="_blank"
-                                   class="text-sm font-medium hover:underline truncate block">@{{ $ev->username }}</a>
+                                   class="text-sm font-medium hover:underline truncate block">{{ '@'.$ev->username }}</a>
                                 @if ($ev->full_name)
                                     <div class="text-xs text-slate-500 truncate">{{ $ev->full_name }}</div>
                                 @endif
@@ -115,14 +115,14 @@
                     @foreach ($recentlyLost as $f)
                         <li class="py-2 flex items-center gap-3">
                             @if ($f->profile_pic_url)
-                                <img src="{{ $f->profile_pic_url }}" alt="" referrerpolicy="no-referrer"
+                                <img src="@igimg($f->profile_pic_url)" alt="" loading="lazy"
                                      class="w-8 h-8 rounded-full object-cover bg-slate-100">
                             @else
                                 <div class="w-8 h-8 rounded-full bg-slate-200"></div>
                             @endif
                             <div class="flex-1 min-w-0">
                                 <a href="https://www.instagram.com/{{ $f->username }}/" target="_blank"
-                                   class="text-sm font-medium hover:underline truncate block">@{{ $f->username }}</a>
+                                   class="text-sm font-medium hover:underline truncate block">{{ '@'.$f->username }}</a>
                                 @if ($f->full_name)
                                     <div class="text-xs text-slate-500 truncate">{{ $f->full_name }}</div>
                                 @endif
@@ -147,12 +147,12 @@
                     <a href="https://www.instagram.com/{{ $f->username }}/" target="_blank"
                        class="flex flex-col items-center text-center hover:opacity-80">
                         @if ($f->profile_pic_url)
-                            <img src="{{ $f->profile_pic_url }}" alt="" referrerpolicy="no-referrer"
+                            <img src="@igimg($f->profile_pic_url)" alt="" loading="lazy"
                                  class="w-14 h-14 rounded-full object-cover bg-slate-100">
                         @else
                             <div class="w-14 h-14 rounded-full bg-slate-200"></div>
                         @endif
-                        <span class="text-xs mt-1 truncate w-full">@{{ $f->username }}</span>
+                        <span class="text-xs mt-1 truncate w-full">{{ '@'.$f->username }}</span>
                     </a>
                 @endforeach
             </div>
